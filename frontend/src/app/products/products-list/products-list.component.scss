@@ -1,0 +1,12 @@
+@import '../../../global-elements.scss';
+
+.products-list-container {
+  height: calc(100vh - #{$nav-height});
+  overflow: scroll;
+}
+
+.products-list {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+}

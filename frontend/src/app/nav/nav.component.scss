@@ -1,0 +1,131 @@
+@import '../../global-elements.scss';
+
+a {
+  text-decoration: none;
+}
+
+.form {
+  display: flex;
+  display: inline;
+  padding: 4px;
+}
+
+.form__input {
+  background-color: $light-green;
+  border: 2px solid $puce;
+  border-radius: 6px;
+
+  font-family: $arima;
+  margin: 0 2px;
+  padding: 6px 10px;
+  width: 200px;
+}
+
+.form__input--last {
+  margin-right: 6px;
+}
+
+.form__button {
+  background-color: $light-green;
+  border: 2px solid $puce;
+  border-radius: 6px;
+  cursor: pointer;
+
+  color: $dark-blue;
+  display: inline;
+  font-family: $arima;
+  font-weight: 500;
+  margin: 0 2px;
+  padding: 8px 12px;
+}
+
+.form__button:disabled {
+  background-color: lightsteelblue;
+  cursor: default;
+}
+
+::ng-deep .mat-menu-item {
+  color: $ruby;
+  font-family: $baloo;
+  font-weight: 400;
+}
+
+::ng-deep .mat-menu-panel {
+  background: $light-green;
+  border: 3px solid $puce;
+  color: $dark-blue;
+}
+
+.menu-button {
+  height: 40px;
+  min-width: 80px;
+
+  background-color: $light-green;
+  border-radius: 5px;
+  color: $dark-blue;
+  cursor: pointer;
+  font-family: $arima;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.menu-item-icon {
+  margin-right: 10px;
+}
+
+.navigation {
+  background-color: $dark-green;
+  height: $nav-height;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__link {
+  color: $dark-blue;
+  display: block;
+  font-family: $arima;
+  font-weight: 500;
+  margin: 16px;
+}
+
+.navigation__links {
+  display: flex;
+}
+
+.navigation__login-error {
+  color: darkred;
+  font-family: $arima;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 16px;
+  margin-top: 4px;
+  position: absolute;
+}
+
+.navigation__login-register {
+
+}
+
+.navigation__menu {
+
+}
+
+.navigation__title {
+  color: $ruby;
+  font-family: $lemonada;
+  font-size: 32px;
+  font-weight: 800;
+
+  padding: 4px;
+}
+
+.router-link-active {
+  color: $light-blue;
+  font-weight: bold;
+}

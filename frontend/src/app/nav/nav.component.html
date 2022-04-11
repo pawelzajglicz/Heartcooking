@@ -1,0 +1,41 @@
+<nav class="navigation">
+
+  <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+    <div class="navigation__title">Heartcooking</div>
+  </a>
+
+  <div class="navigation__links">
+    <a class="navigation__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Strona główna</a>
+    <a class="navigation__link" [routerLink]="['/recipes']" routerLinkActive="router-link-active">Przepisy</a>
+    <a class="navigation__link" [routerLink]="['/products']" routerLinkActive="router-link-active">Produkty</a>
+    <a class="navigation__link" [routerLink]="['/shopping-list']" routerLinkActive="router-link-active">Lista zakupów</a>
+    <a class="navigation__link" [routerLink]="['/users']" routerLinkActive="router-link-active">Użytkownicy</a>
+  </div>
+
+  <div class="navigation__menu" *ngIf="loggedIn()">
+    <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Witaj {{authService.decodedToken?.unique_name | titlecase}}</button>
+
+    <mat-menu #menu="matMenu" yPosition="below">
+      <button mat-menu-item><i class="fa fa-user menu-item-icon"></i>Edytuj Profil</button>
+      <button mat-menu-item (click)="logout()"><i class="fa fa-sign-out menu-item-icon"></i>Wyloguj</button>
+    </mat-menu>
+
+  </div>
+
+  <div class="navigation__login-register" *ngIf="!loggedIn()">
+
+    <form #loginForm="ngForm" class="form" (ngSubmit)="login()">
+
+      <input type="text" name="username" required class="form__input" placeholder="Nazwa użytkownika"
+        aria-label="Nazwa użytkownika" [(ngModel)]="userForLogin.username">
+      <input type="password" name="password" required class="form__input form__input--last" placeholder="Hasło"
+        aria-label="Hasło" [(ngModel)]="userForLogin.password">
+      <button [disabled]="!loginForm.valid" class="form__button">Zaloguj</button>
+
+    </form>
+    <a [routerLink]="['/register']" routerLinkActive="router-link-active"><button class="form__button">Zarejestruj</button></a>
+
+    <div class="navigation__login-error" *ngIf="isFailedLoginInfoToShow()">Nieprawidłowa nazwa użytkownika lub hasło</div>
+
+  </div>
+</nav>

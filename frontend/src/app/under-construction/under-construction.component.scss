@@ -1,0 +1,33 @@
+@import '../../global-elements.scss';
+
+.under-construction {
+  background: repeating-linear-gradient(
+  45deg,
+  #333,
+  #333 30px,
+  rgb(255, 0, 55) 30px,
+  rgb(255, 0, 55)60px
+);
+
+  text-align: center;
+  font-size: 26px;
+  color: rgb(208, 230, 233);
+  font-weight: 800;
+
+  padding: 20px;
+}
+
+.hide-button {
+  background-color: $light-green;
+  border: 2px solid $puce;
+  border-radius: 6px;
+  cursor: pointer;
+
+  color: $dark-blue;
+  font-family: $arima;
+  font-weight: 500;
+  margin-top: 20px;
+  padding: 12px;
+  width: 250px;
+  z-index: -1;
+}

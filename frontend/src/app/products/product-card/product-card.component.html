@@ -1,0 +1,9 @@
+<div>
+  <div class="image-container">
+    <img src="{{product?.photoUrl}}" alt="{{product?.name}}" class="image" [routerLink]="['/products', product?.id]">
+  </div>
+  <div class="image-name" [routerLink]="['/products', product?.id]">
+    {{product?.name}}
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+.image {
+  height: 100%;
+  transform: scale(1.0, 1.0);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.image:hover {
+  opacity: 0.7;
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-name {
+  margin-top: 15px;
+}

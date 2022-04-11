@@ -1,0 +1,40 @@
+@import '../../global-elements.scss';
+
+.form__input {
+  background-color: $light-green;
+  border: 2px solid $puce;
+  border-radius: 6px;
+
+  font-family: $arima;
+  margin: 5px;
+  padding: 6px 10px;
+  width: 200px;
+}
+
+.form__button {
+  background-color: $light-green;
+  border: 2px solid $puce;
+  border-radius: 6px;
+  cursor: pointer;
+
+  color: $dark-blue;
+  font-family: $arima;
+  font-weight: 500;
+  margin: 0 2px;
+  padding: 8px 12px;
+  width: 200px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.register-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
