@@ -1,0 +1,50 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="ddl9" author="pawel">
+        <createTable tableName="products">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="carbohydrates" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fat" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fiber" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="kilocalories" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="protein" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salt" type="double" />
+            <column name="saturated_fat" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sugar" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_vegan" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            drop table products
+        </rollback>
+    </changeSet>
+
+
+
+</databaseChangeLog>

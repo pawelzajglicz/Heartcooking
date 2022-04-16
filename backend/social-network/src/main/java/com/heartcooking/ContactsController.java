@@ -1,11 +1,8 @@
 package com.heartcooking;
 
 import com.heartcooking.auth.dto.SimpleUserInfo;
-import com.heartcooking.auth.models.User;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;

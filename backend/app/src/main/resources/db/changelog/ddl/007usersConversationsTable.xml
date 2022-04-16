@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="ddl8a" author="pawel">
+    <changeSet id="ddl7a" author="pawel">
         <createTable tableName="users_conversations">
             <column name="user_id" type="bigserial">
                 <constraints nullable="true"/>
@@ -17,7 +17,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="ddl8b" author="pawel">
+    <changeSet id="ddl7b" author="pawel">
         <addPrimaryKey columnNames="user_id, conversation_id" tableName="users_conversations"/>
 
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="users_conversations"

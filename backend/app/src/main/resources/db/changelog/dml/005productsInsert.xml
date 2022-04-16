@@ -1,0 +1,115 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="dml5" author="pawel">
+        <insert tableName="products">
+            <column name="id" valueComputed="1"/>
+            <column name="name" value="Jajko"/>
+            <column name="description" value="Jajko kurze"/>
+            <column name="carbohydrates" value="1"/>
+            <column name="fat" value="11"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="51"/>
+            <column name="protein" value="13"/>
+            <column name="salt" value="0.36"/>
+            <column name="saturated_fat" value="3"/>
+            <column name="sugar" value="1.1"/>
+            <column name="is_vegan" value="false"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="2"/>
+            <column name="name" value="Mleko 2%"/>
+            <column name="description" value="Mleko z zawartością tłuszczu 2%"/>
+            <column name="carbohydrates" value="4.9"/>
+            <column name="fat" value="2"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="51"/>
+            <column name="protein" value="3.3"/>
+            <column name="salt" value="0.1"/>
+            <column name="saturated_fat" value="1.2"/>
+            <column name="sugar" value="4.9"/>
+            <column name="is_vegan" value="false"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="3"/>
+            <column name="name" value="Mąka pszenna"/>
+            <column name="description" value="Mąka pszenna"/>
+            <column name="carbohydrates" value="69"/>
+            <column name="fat" value="1"/>
+            <column name="fiber" value="2.7"/>
+            <column name="kilocalories" value="346"/>
+            <column name="protein" value="11"/>
+            <column name="saturated_fat" value="0.2"/>
+            <column name="sugar" value="1"/>
+            <column name="is_vegan" value="true"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="4"/>
+            <column name="name" value="Jagody"/>
+            <column name="description" value="Jagody"/>
+            <column name="carbohydrates" value="10"/>
+            <column name="fat" value="0.76"/>
+            <column name="fiber" value="2.6"/>
+            <column name="kilocalories" value="50"/>
+            <column name="protein" value="1.22"/>
+            <column name="saturated_fat" value="0"/>
+            <column name="sugar" value="8"/>
+            <column name="is_vegan" value="true"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="5"/>
+            <column name="name" value="Banany"/>
+            <column name="description" value="Banany"/>
+            <column name="carbohydrates" value="22.84"/>
+            <column name="fat" value="0.33"/>
+            <column name="fiber" value="2"/>
+            <column name="kilocalories" value="89"/>
+            <column name="protein" value="1.1"/>
+            <column name="saturated_fat" value="0.1"/>
+            <column name="sugar" value="18.2"/>
+            <column name="is_vegan" value="true"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="6"/>
+            <column name="name" value="Jogurt"/>
+            <column name="description" value="Jogurt naturalny"/>
+            <column name="carbohydrates" value="3.6"/>
+            <column name="fat" value="3"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="58"/>
+            <column name="protein" value="5"/>
+            <column name="saturated_fat" value="2"/>
+            <column name="sugar" value="3.2"/>
+            <column name="is_vegan" value="false"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="7"/>
+            <column name="name" value="Wieprzowina"/>
+            <column name="description" value="Mięso wieprzowe"/>
+            <column name="carbohydrates" value="0"/>
+            <column name="fat" value="21.19"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="263"/>
+            <column name="protein" value="16.88"/>
+            <column name="saturated_fat" value="7.87"/>
+            <column name="sugar" value="0"/>
+            <column name="is_vegan" value="false"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="8"/>
+            <column name="name" value="Masło"/>
+            <column name="description" value="Masło"/>
+            <column name="carbohydrates" value="0.1"/>
+            <column name="fat" value="81"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="716"/>
+            <column name="protein" value="0.9"/>
+            <column name="saturated_fat" value="51"/>
+            <column name="sugar" value="0.1"/>
+            <column name="is_vegan" value="false"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

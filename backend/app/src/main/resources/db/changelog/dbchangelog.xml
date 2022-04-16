@@ -9,9 +9,14 @@
     <include file="ddl/006conversationsTable.xml" relativeToChangelogFile="true"/>
     <include file="ddl/007usersConversationsTable.xml" relativeToChangelogFile="true"/>
     <include file="ddl/008messagesTable.xml" relativeToChangelogFile="true"/>
-    <include file="dml/01usersRolesInsert.xml" relativeToChangelogFile="true"/>
-    <include file="dml/02usersInsert.xml" relativeToChangelogFile="true"/>
-    <include file="dml/03contactsInsert.xml" relativeToChangelogFile="true"/>
-    <include file="dml/04conversationsInsert.xml" relativeToChangelogFile="true"/>
+    <include file="ddl/009productsTable.xml" relativeToChangelogFile="true"/>
+    <include file="ddl/010photosTable.xml" relativeToChangelogFile="true"/>
+
+    <include file="dml/001usersRolesInsert.xml" relativeToChangelogFile="true"/>
+    <include file="dml/002usersInsert.xml" relativeToChangelogFile="true"/>
+    <include file="dml/003contactsInsert.xml" relativeToChangelogFile="true"/>
+    <include file="dml/004conversationsInsert.xml" relativeToChangelogFile="true"/>
+    <include file="dml/005productsInsert.xml" relativeToChangelogFile="true"/>
+    <include file="dml/006photosInsert.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

@@ -1,0 +1,81 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="dml6" author="pawel">
+        <insert tableName="photos">
+            <column name="id" valueComputed="1"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/05/05/15/29/egg-1374141_960_720.jpg"/>
+            <column name="description" value="Dwa jajka kurze"/>
+            <column name="added_at" value="2020-10-06 15:01:10"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="1"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="2"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/03/26/22/58/food-1281742_960_720.jpg"/>
+            <column name="description" value="Jajko kurze"/>
+            <column name="added_at" value="2022-11-06 17:33:05"/>
+            <column name="is_main" value="false"/>
+            <column name="product_id" value="1"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="3"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234_960_720.jpg"/>
+            <column name="description" value="Mleko"/>
+            <column name="added_at" value="2020-10-26 15:45:10"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="2"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="4"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/07/19/15/27/flour-1528338_960_720.jpg"/>
+            <column name="description" value="Mąka na łanach zboża"/>
+            <column name="added_at" value="2021-06-16 07:01:10"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="3"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="5"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2015/03/26/09/40/blueberries-690072_960_720.jpg"/>
+            <column name="description" value="Jagody"/>
+            <column name="added_at" value="2020-10-06 11:11:11"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="4"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="6"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/01/03/17/59/bananas-1119790_960_720.jpg"/>
+            <column name="description" value="Banany"/>
+            <column name="added_at" value="2022-01-07 15:01:10"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="5"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="7"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/12/22/10/46/raspberries-1925178_960_720.jpg"/>
+            <column name="description" value="Jogurt z malinami"/>
+            <column name="added_at" value="2020-10-06 15:01:10"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="6"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="8"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/10/17/15/08/minced-meat-1747910_960_720.jpg"/>
+            <column name="description" value="Mielona wieprzowina"/>
+            <column name="added_at" value="2020-10-06 15:01:10"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="7"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="9"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2016/06/11/04/09/butter-1449453_960_720.jpg"/>
+            <column name="description" value="Kostki masła"/>
+            <column name="added_at" value="2022-05-07 02:11:47"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="8"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

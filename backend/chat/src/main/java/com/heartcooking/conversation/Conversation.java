@@ -21,7 +21,7 @@ public class Conversation implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "createdAt")
+	@Column(name = "created_at")
 	private Instant createdAt;
 
 	@ManyToMany(fetch = FetchType.EAGER)

@@ -31,6 +31,11 @@
         </dependency>
         <dependency>
             <groupId>com.heartcooking</groupId>
+            <artifactId>recipes</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.heartcooking</groupId>
             <artifactId>social-network</artifactId>
             <version>${project.version}</version>
         </dependency>
