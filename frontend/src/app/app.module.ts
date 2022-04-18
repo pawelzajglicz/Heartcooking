@@ -58,7 +58,7 @@ export function tokenGetter() {
         }
       }),
       MatMenuModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
    ],
    providers: [
      AuthService,
