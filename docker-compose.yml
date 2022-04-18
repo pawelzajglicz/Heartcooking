@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  persistent-database:
+    image: postgres
+    container_name: hc_persistant_database
+    environment:
+      - POSTGRES_PASSWORD=somePassword
+    ports:
+      - 5432:5432
+    volumes:
+      - "d:/heartcooking/postgre_data:/var/lib/postgresql/data"
+      
+  transitory-database:
+    image: redis
+    container_name: hc_transitory_database
+    ports:
+      - 6379:6379
+    volumes:
+      - "d:/heartcooking/redis_data:/data"
+      
+  message-broker:
+    image: "rabbitmq:3-management"
+    container_name: hc_message-broker
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - "d:/hc/message-broker_data:/var/lib/rabbitmq/mnesia/"
+      - ./init/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./init/definitions.json:/etc/rabbitmq/definitions.json:ro
+    networks:
+        - rabbitmq_go_net
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge

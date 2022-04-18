@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "Heartcooking-SPA"
+  "defaultProject": "Heartcooking-SPA",
+  "cli": {
+    "analytics": "45b37b4d-ecc1-4ccb-b99e-012ab84f3b07"
+  }
 }
