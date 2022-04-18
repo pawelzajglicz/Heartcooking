@@ -11,6 +11,7 @@
     <include file="ddl/008messagesTable.xml" relativeToChangelogFile="true"/>
     <include file="ddl/009productsTable.xml" relativeToChangelogFile="true"/>
     <include file="ddl/010photosTable.xml" relativeToChangelogFile="true"/>
+    <include file="ddl/011tracesAllergensTable.xml" relativeToChangelogFile="true"/>
 
     <include file="dml/001usersRolesInsert.xml" relativeToChangelogFile="true"/>
     <include file="dml/002usersInsert.xml" relativeToChangelogFile="true"/>

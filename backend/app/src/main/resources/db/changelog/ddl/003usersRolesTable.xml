@@ -12,13 +12,13 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <addPrimaryKey columnNames="user_id, role_id" tableName="users_roles"/>
         <rollback>
             drop table users_roles
         </rollback>
     </changeSet>
 
     <changeSet id="ddl3b" author="pawel">
-        <addPrimaryKey columnNames="user_id, role_id" tableName="users_roles"/>
 
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="users_roles"
                                  constraintName="FK_users_roles" deferrable="false"

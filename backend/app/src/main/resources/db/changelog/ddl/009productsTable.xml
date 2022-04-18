@@ -36,6 +36,9 @@
             <column name="sugar" type="double">
                 <constraints nullable="false"/>
             </column>
+            <column name="is_allergen" type="boolean">
+                <constraints nullable="false"/>
+            </column>
             <column name="is_vegan" type="boolean">
                 <constraints nullable="false"/>
             </column>

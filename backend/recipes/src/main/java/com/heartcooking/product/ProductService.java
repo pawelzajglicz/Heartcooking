@@ -1,10 +1,13 @@
 package com.heartcooking.product;
 
-import com.heartcooking.product.dtos.ProductForListDto;
+import com.heartcooking.product.dtos.ProductDetailsDTO;
+import com.heartcooking.product.dtos.ProductForListDTO;
 
 import java.util.List;
 
 public interface ProductService {
 
-	List<ProductForListDto> getProducts();
+	List<ProductForListDTO> getProducts();
+
+	ProductDetailsDTO getProductById(Long id);
 }
