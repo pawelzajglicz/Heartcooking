@@ -1,0 +1,46 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="ddl11a" author="pawel">
+        <createTable tableName="traces_allergens">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            drop table traces_allergens
+        </rollback>
+    </changeSet>
+
+    <changeSet id="ddl11b" author="pawel">
+        <createTable tableName="products_traces_allergens">
+            <column name="product_id" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="traces_allergen_id" type="int8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="product_id, traces_allergen_id" tableName="products_traces_allergens"/>
+        <rollback>
+            drop table products_traces_allergens
+        </rollback>
+    </changeSet>
+
+    <changeSet id="ddl11c" author="pawel">
+
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="products_traces_allergens"
+                                 constraintName="FK_products_traces_allergens" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="products"/>
+
+        <addForeignKeyConstraint baseColumnNames="traces_allergen_id" baseTableName="products_traces_allergens"
+                                 constraintName="FK_traces_allergens_products" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"/>
+    </changeSet>
+
+</databaseChangeLog>

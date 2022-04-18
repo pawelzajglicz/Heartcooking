@@ -1,4 +1,3 @@
-import { Allergen } from './allergen';
 import { BaseModel } from './base-model';
 import { Photo } from './photo';
 
@@ -14,8 +13,9 @@ export interface Product extends BaseModel {
   salt: number;
   saturatedFat: number;
   suger: number;
+  isAllergen: boolean;
   isVegan: boolean;
   photoUrl: string;
-  photos?: Photo[];
-  allergens?: Allergen[];
+  allergenNames: string[],
+  photos: Photo[];
 }
