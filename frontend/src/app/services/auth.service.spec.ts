@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { AuthService } from './auth.service';
 
 describe('Service: Auth', () => {
