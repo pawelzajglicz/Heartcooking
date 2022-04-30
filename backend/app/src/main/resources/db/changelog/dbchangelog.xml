@@ -19,5 +19,6 @@
     <include file="dml/004conversationsInsert.xml" relativeToChangelogFile="true"/>
     <include file="dml/005productsInsert.xml" relativeToChangelogFile="true"/>
     <include file="dml/006photosInsert.xml" relativeToChangelogFile="true"/>
+    <include file="dml/007tracesAllergensInsert.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

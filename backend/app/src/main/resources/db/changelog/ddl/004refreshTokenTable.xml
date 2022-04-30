@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="ddl4a" author="pawel">
+    <changeSet id="ddl004a" author="pawel">
         <createTable tableName="refresh_tokens">
             <column name="id" type="bigserial">
                 <constraints primaryKey="true"/>
@@ -23,7 +23,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="ddl4b" author="pawel">
+    <changeSet id="ddl004b" author="pawel">
 
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="refresh_tokens"
                                  constraintName="FK_users_roles" deferrable="false"

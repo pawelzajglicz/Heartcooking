@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="dml6" author="pawel">
+    <changeSet id="dml006a" author="pawel">
         <insert tableName="photos">
             <column name="id" valueComputed="1"/>
             <column name="url" value="https://cdn.pixabay.com/photo/2016/05/05/15/29/egg-1374141_960_720.jpg"/>
@@ -76,6 +76,10 @@
             <column name="is_main" value="true"/>
             <column name="product_id" value="8"/>
         </insert>
+    </changeSet>
+
+    <changeSet id="dml006b" author="pawel">
+        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.photos_id_seq RESTART WITH 10</sql>
     </changeSet>
 
 </databaseChangeLog>

@@ -3,23 +3,23 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="dml001a" author="pawel">
-        <insert tableName="roles">
+    <changeSet id="dml007a" author="pawel">
+        <insert tableName="traces_allergens">
             <column name="id" valueComputed="1"/>
-            <column name="name" value="ROLE_USER"/>
+            <column name="name" value="Soja"/>
         </insert>
-        <insert tableName="roles">
+        <insert tableName="traces_allergens">
             <column name="id" valueComputed="2"/>
-            <column name="name" value="ROLE_MODERATOR"/>
+            <column name="name" value="Mleko/laktoza"/>
         </insert>
-        <insert tableName="roles">
+        <insert tableName="traces_allergens">
             <column name="id" valueComputed="3"/>
-            <column name="name" value="ROLE_ADMIN"/>
+            <column name="name" value="Seler"/>
         </insert>
     </changeSet>
 
-    <changeSet id="dml001b" author="pawel">
-        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.roles_id_seq RESTART WITH 4</sql>
+    <changeSet id="dml007b" author="pawel">
+        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.traces_allergens_id_seq RESTART WITH 4</sql>
     </changeSet>
 
 </databaseChangeLog>
