@@ -1,5 +1,6 @@
 package com.heartcooking.product;
 
+import com.heartcooking.product.dtos.NewProductDTO;
 import com.heartcooking.product.dtos.ProductDetailsDTO;
 import com.heartcooking.product.dtos.ProductForListDTO;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,7 @@ public class ProductController {
 
 	private ProductService productsService;
 
-	@GetMapping("")
+	@GetMapping(path = {"", "/"})
 	public ResponseEntity<List<ProductForListDTO>> getProducts() {
 
 		return ResponseEntity.ok(productsService.getProducts());
@@ -26,5 +27,13 @@ public class ProductController {
 	public ResponseEntity<ProductDetailsDTO> getProductById(@PathVariable Long id) {
 
 		return ResponseEntity.ok(productsService.getProductById(id));
+	}
+
+	@PostMapping(path = {"", "/"})
+	public ResponseEntity<Void> addProduct(@RequestBody NewProductDTO newProduct) {
+
+		productsService.add(newProduct);
+
+		return ResponseEntity.ok().build();
 	}
 }

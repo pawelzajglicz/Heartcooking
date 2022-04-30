@@ -1,10 +1,7 @@
 package com.heartcooking.photo;
 
 import com.heartcooking.product.Product;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -33,9 +30,14 @@ public class Photo implements Serializable {
 	private Instant addedAt;
 
 	@Column(name = "is_main")
+	@Getter(AccessLevel.NONE)
 	private Boolean isMain;
 
 	@ManyToOne
 	@JoinColumn(name="product_id", nullable=false)
 	private Product product;
+
+	public Boolean isMain() {
+		return isMain;
+	}
 }
