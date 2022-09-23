@@ -1,12 +1,14 @@
 package com.heartcooking.product.dtos;
 
 import com.heartcooking.photo.NewPhotoDTO;
+import com.heartcooking.tracesallergen.TracesAllergen;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -48,5 +50,5 @@ public class NewProductDTO {
 
 	List<NewPhotoDTO> photos;
 
-	List<Long> tracesAllergensIds;
+	Set<TracesAllergen> tracesAllergens;
 }

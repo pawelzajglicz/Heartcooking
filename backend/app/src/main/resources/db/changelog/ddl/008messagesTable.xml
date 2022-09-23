@@ -32,6 +32,7 @@
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="conversations"/>
 
         <addForeignKeyConstraint baseColumnNames="sender_id" baseTableName="messages"
+                                 onDelete="CASCADE"
                                  constraintName="FK_message_user" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="users"/>
     </changeSet>

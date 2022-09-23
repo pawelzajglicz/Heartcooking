@@ -83,8 +83,8 @@ public class ProductMapper {
 					.collect(Collectors.toSet()));
 		}
 
-		if (newProductDto.getTracesAllergensIds() != null && newProductDto.getTracesAllergensIds().size() > 0) {
-			product.setTracesAllergens(tracesAllergenRepository.findAllById(newProductDto.getTracesAllergensIds()).stream().collect(Collectors.toSet()));
+		if (newProductDto.getTracesAllergens() != null) {
+			product.setTracesAllergens(newProductDto.getTracesAllergens());
 		}
 
 		return product;

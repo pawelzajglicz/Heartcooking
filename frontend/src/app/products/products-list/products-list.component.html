@@ -4,6 +4,7 @@
   </h1>
 
   <div class="products-list">
+    <app-new-product-card></app-new-product-card>
     <p *ngFor="let product of products">
       <app-product-card [product]="product"></app-product-card>
     </p>

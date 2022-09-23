@@ -1,4 +1,9 @@
-.image {
+.icon {
+  align-items: center;
+  display: flex;
+  font-size: 6em;
+  height: 100%;
+  justify-content: center;
   height: 100%;
   transform: scale(1.0, 1.0);
   transition-duration: 500ms;
@@ -13,12 +18,12 @@
   }
 }
 
-.image-container {
+.icon-container {
   height: 9em;
   overflow: hidden;
 }
 
-.image-name {
+.add-product {
   margin-top: 15px;
 
   &:hover {
