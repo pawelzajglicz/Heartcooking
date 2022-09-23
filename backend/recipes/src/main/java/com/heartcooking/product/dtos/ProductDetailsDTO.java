@@ -17,5 +17,5 @@ public record ProductDetailsDTO(Long id,
 								Double sugar,
 								Boolean isAllergen,
 								Boolean isVegan,
-								List<PhotoForProductDetailsDTO> photoUrls,
+								List<PhotoForProductDetailsDTO> photos,
 								List<String> allergensNames) {}

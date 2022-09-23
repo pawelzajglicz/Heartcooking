@@ -1,6 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +14,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { NewProductCardComponent } from './products/new-product-card/new-product-card.component';
+import { NewProductComponent } from './products/new-product/new-product.component';
 import { ProductCardComponent } from './products/product-card/product-card.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
@@ -32,6 +38,8 @@ export function tokenGetter() {
       AppComponent,
       HomeComponent,
       NavComponent,
+      NewProductCardComponent,
+      NewProductComponent,
       ProductCardComponent,
       ProductDetailsComponent,
       ProductsListComponent,
@@ -52,11 +60,16 @@ export function tokenGetter() {
       JwtModule.forRoot({
         config: {
           tokenGetter,
-          allowedDomains: ['localhost:5000'],
-          disallowedRoutes: ['localhost:5000/api/auth']
+          allowedDomains: ['localhost:8080'],
+          disallowedRoutes: ['localhost:8080/api/auth']
         }
       }),
+      MatAutocompleteModule,
+      MatCheckboxModule,
+      MatChipsModule,
+      MatFormFieldModule,
       MatMenuModule,
+      ReactiveFormsModule,
       RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
    ],
    providers: [

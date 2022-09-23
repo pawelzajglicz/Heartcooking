@@ -53,18 +53,28 @@ public class Product implements Serializable {
 	private Double sugar;
 
 	@Column(name = "is_allergen")
+	@Getter(AccessLevel.NONE)
 	private Boolean isAllergen;
 
 	@Column(name = "is_vegan")
+	@Getter(AccessLevel.NONE)
 	private Boolean isVegan;
 
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private Set<Photo> photos;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "products_traces_allergens",
 			schema = "heartcooking",
-			joinColumns = @JoinColumn(name = "traces_allergen_id"),
-			inverseJoinColumns = @JoinColumn(name = "product_id"))
+			joinColumns = @JoinColumn(name = "product_id"),
+			inverseJoinColumns = @JoinColumn(name = "traces_allergen_id"))
 	private Set<TracesAllergen> tracesAllergens;
+
+	Boolean isAllergen() {
+		return isAllergen;
+	}
+
+	Boolean isVegan() {
+		return isVegan;
+	}
 }

@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="dml5" author="pawel">
+    <changeSet id="dml005a" author="pawel">
         <insert tableName="products">
             <column name="id" valueComputed="1"/>
             <column name="name" value="Jajko"/>
@@ -118,6 +118,10 @@
             <column name="is_allergen" value="true"/>
             <column name="is_vegan" value="false"/>
         </insert>
+    </changeSet>
+
+    <changeSet id="dml005b" author="pawel">
+        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.products_id_seq RESTART WITH 9</sql>
     </changeSet>
 
 </databaseChangeLog>

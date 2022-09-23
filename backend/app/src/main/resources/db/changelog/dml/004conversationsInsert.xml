@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="dml4a" author="pawel">
+    <changeSet id="dml004a" author="pawel">
         <insert tableName="conversations">
             <column name="id" valueComputed="1"/>
             <column name="created_at" value="2020-10-06 15:01:10"/>
@@ -34,11 +34,11 @@
         </insert>
     </changeSet>
 
-    <changeSet id="dml4b" author="pawel">
+    <changeSet id="dml004b" author="pawel">
         <sql dbms="postgresql">ALTER SEQUENCE heartcooking.conversations_id_seq RESTART WITH 8</sql>
     </changeSet>
 
-    <changeSet id="dml4c" author="pawel">
+    <changeSet id="dml004c" author="pawel">
         <insert tableName="users_conversations">
             <column name="conversation_id" value="1"/>
             <column name="user_id" valueComputed="3"/>
@@ -97,7 +97,7 @@
         </insert>
     </changeSet>
 
-    <changeSet id="dml4d" author="pawel">
+    <changeSet id="dml004d" author="pawel">
         <insert tableName="messages">
             <column name="id" value="1"/>
             <column name="conversation_id" value="1"/>
@@ -404,7 +404,7 @@
         </insert>
     </changeSet>
 
-    <changeSet id="dml4e" author="pawel">
+    <changeSet id="dml004e" author="pawel">
         <sql dbms="postgresql">ALTER SEQUENCE heartcooking.messages_id_seq RESTART WITH 39</sql>
     </changeSet>
 

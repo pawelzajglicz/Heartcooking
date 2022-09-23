@@ -48,6 +48,11 @@ a {
   color: $ruby;
   font-family: $baloo;
   font-weight: 400;
+
+  &:hover {
+    background-color: $light-green;
+    font-weight: bold;
+  }
 }
 
 ::ng-deep .mat-menu-panel {
@@ -67,6 +72,10 @@ a {
   font-family: $arima;
   font-weight: 500;
   margin-right: 10px;
+
+  &:hover {
+    background-color: $middle-green-yellow;
+  }
 }
 
 .menu-item-icon {
@@ -92,6 +101,21 @@ a {
   font-family: $arima;
   font-weight: 500;
   margin: 16px;
+  text-decoration: none;
+
+  &:hover {
+    color: wheat;
+    font-weight: bold;
+  }
+
+  &::before {
+    display: block;
+    content: attr(content);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
 }
 
 .navigation__links {

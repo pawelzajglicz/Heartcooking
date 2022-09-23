@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="dml2a" author="pawel">
+    <changeSet id="dml002a" author="pawel">
         <insert tableName="users">
             <column name="id" valueComputed="1"/>
             <column name="username" value="admin"/>
@@ -48,11 +48,11 @@
         </insert>
     </changeSet>
 
-    <changeSet id="dml2b" author="pawel">
+    <changeSet id="dml002b" author="pawel">
         <sql dbms="postgresql">ALTER SEQUENCE heartcooking.users_id_seq RESTART WITH 8</sql>
     </changeSet>
 
-    <changeSet id="dml2c" author="pawel">
+    <changeSet id="dml002c" author="pawel">
         <insert tableName="users_roles">
             <column name="user_id" valueComputed="1"/>
             <column name="role_id" valueComputed="3"/>

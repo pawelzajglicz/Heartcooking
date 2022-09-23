@@ -1,0 +1,109 @@
+<p>Dodaj nowy produkt</p>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+
+  <div class="form__field">
+    <label for="name">Nazwa produktu:</label>
+    <input type="text" name="name" placeholder="Nazwa produktu" formControlName="name" class="form__input">
+    <div *ngIf="productForm.controls['name'].invalid && productForm.controls['name'].dirty" class="form__field__error">Nazwa produktu nie może być pusta!</div>
+  </div>
+
+  <div class="form__field">
+    <label for="description">Opis produktu:</label>
+    <input type="text" name="description" placeholder="Opis produktu" formControlName="description" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="carbohydrates">Węglowodany</label>
+    <input type="number" name="carbohydrates" placeholder="Węglowodany" formControlName="carbohydrates" class="form__input">
+    <div *ngIf="productForm.controls['carbohydrates'].invalid && productForm.controls['carbohydrates'].dirty" class="form__field__error">
+      Ilość węglowodanów w produkcie musi być podana!</div>
+  </div>
+
+  <div class="form__field">
+    <label for="fat">Tłuszcze</label>
+    <input type="number" name="fat" placeholder="Tłuszcze" formControlName="fat" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="fiber">Błonnik:</label>
+    <input type="number" name="fiber" placeholder="Błonnik" formControlName="fiber" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="kilocalories">Kilokalorie:</label>
+    <input type="number" name="kilocalories" placeholder="Kilokalorie" formControlName="kilocalories" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="protein">Białko:</label>
+    <input type="number" name="protein" placeholder="Białko" formControlName="protein" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="salt">Sól:</label>
+    <input type="number" name="salt" placeholder="Sól" formControlName="salt" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="saturatedFat">Tłuszcze nasycone:</label>
+    <input type="number" name="saturatedFat" placeholder="Tłuszcze nasycone" formControlName="saturatedFat" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="sugar">Cukry:</label>
+    <input type="number" name="sugar" placeholder="Cukry" formControlName="sugar" class="form__input">
+  </div>
+
+  <div class="form__field">
+    <label for="isAllergen">Czy produkt jest alergenem?</label>
+    <mat-checkbox id="isAllergen" class="amateur" color="primary" formControlName="isAllergen"></mat-checkbox>
+  </div>
+
+  <div class="form__field">
+    <label for="tracesAllergens">Możliwe śladowe ilości alergenów:</label>
+    <!--<input type="number" name="firstName" placeholder="First name" formControlName="tracesAllergens" class="form__input">-->
+  </div>
+  <mat-chip-list #chipList aria-label="Fruit selection" formArrayName="tracesAllergens">
+    <mat-chip
+      *ngFor="let tracesAllergen of productForm.controls.tracesAllergens.value"
+      (removed)="removeTracesAllergen(tracesAllergen)">
+      {{tracesAllergen.name}}
+      <button matChipRemove>
+        <i class="fa fa-times"></i>
+      </button>
+    </mat-chip>
+    <input #traceAllergenInput
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addTracesAllergen($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedTracesAllergen($event)">
+    <mat-option *ngFor="let tracesAllergen of tracesAllergens$ | async" [value]="tracesAllergen">
+      {{tracesAllergen.name}}
+    </mat-option>
+  </mat-autocomplete>
+
+  <div class="form__field">
+    <label for="isVegan">Czy produkt jest wegański?</label>
+    <mat-checkbox id="isVegan" class="amateur" color="primary" formControlName="isVegan"></mat-checkbox>
+  </div>
+
+  <!-- <ng-container formArrayName="photos">
+    <h4>Zdjęcia</h4>
+    <button type="button" (click)="addPhoto()">+ Dodaj zdjęcie produktu</button>
+
+    <div *ngFor="let photo of productForm.controls.photos.value; let i=index" [formGroup]="photo">
+
+      <label for="url">Link do zdjęcia:</label>
+      <input type="text" name="url" placeholder="Link do zdjęcia" formControlName="url" class="form__input">
+      <label for="description">Opis zdjęcia:</label>
+      <input type="text" name="description" placeholder="Opis zdjęcia" formControlName="description" class="form__input">
+      <input #photoRadiobutton type="radio" name="isMainPhoto" (click)="selectedMainPhoto(photo)">
+      <button (click)="removePhoto(photo, i)">Usuń zdjęcie</button>
+    </div>
+
+  </ng-container> -->
+
+  <button (click)="addProduct()" [disabled]="productForm.invalid">Dodaj produkt</button>
+</form>
