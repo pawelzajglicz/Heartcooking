@@ -1,0 +1,37 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="ddl014a" author="pawel">
+        <createTable tableName="recipe_steps">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="recipe_id" type="bigserial">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_number" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="photo_id" type="bigserial">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            drop table recipeSteps
+        </rollback>
+    </changeSet>
+
+    <changeSet id="ddl014b" author="pawel">
+
+        <addForeignKeyConstraint baseColumnNames="recipe_id" baseTableName="recipe_steps"
+                                 constraintName="FK_recipe_step_recipe" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="recipes"/>
+
+    </changeSet>
+
+</databaseChangeLog>

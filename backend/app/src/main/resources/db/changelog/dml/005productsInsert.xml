@@ -118,10 +118,38 @@
             <column name="is_allergen" value="true"/>
             <column name="is_vegan" value="false"/>
         </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="9"/>
+            <column name="name" value="Woda gazowana"/>
+            <column name="description" value="Woda gazowana"/>
+            <column name="carbohydrates" value="0"/>
+            <column name="fat" value="0"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="0"/>
+            <column name="protein" value="0"/>
+            <column name="saturated_fat" value="0"/>
+            <column name="sugar" value="0"/>
+            <column name="is_allergen" value="false"/>
+            <column name="is_vegan" value="true"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" valueComputed="10"/>
+            <column name="name" value="Sól"/>
+            <column name="description" value="Sól"/>
+            <column name="carbohydrates" value="0"/>
+            <column name="fat" value="0"/>
+            <column name="fiber" value="0"/>
+            <column name="kilocalories" value="0"/>
+            <column name="protein" value="0"/>
+            <column name="saturated_fat" value="0"/>
+            <column name="sugar" value="0"/>
+            <column name="is_allergen" value="false"/>
+            <column name="is_vegan" value="true"/>
+        </insert>
     </changeSet>
 
     <changeSet id="dml005b" author="pawel">
-        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.products_id_seq RESTART WITH 9</sql>
+        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.products_id_seq RESTART WITH 11</sql>
     </changeSet>
 
 </databaseChangeLog>
