@@ -76,10 +76,26 @@
             <column name="is_main" value="true"/>
             <column name="product_id" value="8"/>
         </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="10"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2017/08/27/17/43/water-glass-2686973_960_720.jpg"/>
+            <column name="description" value="Woda gazowana"/>
+            <column name="added_at" value="2022-05-07 02:13:47"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="9"/>
+        </insert>
+        <insert tableName="photos">
+            <column name="id" valueComputed="11"/>
+            <column name="url" value="https://cdn.pixabay.com/photo/2021/10/21/10/31/salt-6728600_960_720.jpg"/>
+            <column name="description" value="Sól"/>
+            <column name="added_at" value="2022-05-07 02:13:51"/>
+            <column name="is_main" value="true"/>
+            <column name="product_id" value="10"/>
+        </insert>
     </changeSet>
 
     <changeSet id="dml006b" author="pawel">
-        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.photos_id_seq RESTART WITH 10</sql>
+        <sql dbms="postgresql">ALTER SEQUENCE heartcooking.photos_id_seq RESTART WITH 12</sql>
     </changeSet>
 
 </databaseChangeLog>

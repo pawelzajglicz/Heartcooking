@@ -3,35 +3,34 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="ddl010a" author="pawel">
-        <createTable tableName="photos">
+    <changeSet id="ddl012a" author="pawel">
+        <createTable tableName="recipes">
             <column name="id" type="bigserial">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="url" type="varchar(2000)">
+            <column name="name" type="varchar(2000)">
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="varchar(2000)">
                 <constraints nullable="false"/>
             </column>
-            <column name="added_at" type="timestamptz" />
-            <column name="is_main" type="boolean">
+            <column name="added_at" type="timestamptz">
                 <constraints nullable="false"/>
             </column>
-            <column name="product_id" type="int8">
+            <column name="author_id" type="bigserial">
                 <constraints nullable="false"/>
             </column>
         </createTable>
         <rollback>
-            drop table photos
+            drop table recipes
         </rollback>
     </changeSet>
 
-    <changeSet id="ddl010b" author="pawel">
+    <changeSet id="ddl012b" author="pawel">
 
-        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="photos"
-                                 constraintName="FK_photos_product" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="products"/>
+        <addForeignKeyConstraint baseColumnNames="author_id" baseTableName="recipes"
+                                 constraintName="FK_recipe_author" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="users"/>
 
     </changeSet>
 

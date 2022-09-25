@@ -48,6 +48,4 @@
         </rollback>
     </changeSet>
 
-
-
 </databaseChangeLog>
