@@ -1,17 +1,20 @@
 package com.heartcooking.photo;
 
 import com.heartcooking.product.Product;
+import com.heartcooking.recipe.Recipe;
+import com.heartcooking.recipe.RecipeStep;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-@Entity
-@Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Getter
+@Entity
+@NoArgsConstructor
+@Setter
 @Table(name = "photos", schema = "heartcooking")
 public class Photo implements Serializable {
 
@@ -34,8 +37,16 @@ public class Photo implements Serializable {
 	private Boolean isMain;
 
 	@ManyToOne
-	@JoinColumn(name="product_id", nullable=false)
+	@JoinColumn(name="product_id")
 	private Product product;
+
+	@ManyToOne
+	@JoinColumn(name="recipe_id")
+	private Recipe recipe;
+
+	@ManyToOne
+	@JoinColumn(name="recipe_step_id")
+	private RecipeStep recipeStep;
 
 	public Boolean isMain() {
 		return isMain;

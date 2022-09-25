@@ -2,7 +2,8 @@ package com.heartcooking.product;
 
 import com.heartcooking.photo.NewPhotoDTO;
 import com.heartcooking.photo.Photo;
-import com.heartcooking.photo.PhotoForProductDetailsDTO;
+import com.heartcooking.photo.PhotoForItemDetailsDTO;
+import com.heartcooking.photo.PhotoMapper;
 import com.heartcooking.product.dtos.NewProductDTO;
 import com.heartcooking.product.dtos.ProductDetailsDTO;
 import com.heartcooking.product.dtos.ProductForListDTO;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 public class ProductMapper {
 
+	private PhotoMapper photoMapper;
 	private TracesAllergenRepository tracesAllergenRepository;
 
 	ProductForListDTO mapProductToProductForListDTO(Product product) {
@@ -26,9 +28,9 @@ public class ProductMapper {
 				product.getName(),
 				product.getDescription(),
 				product.getPhotos().stream()
-						.filter(photo -> photo.isMain())
+						.filter(Photo::isMain)
 						.findFirst()
-						.map(photo -> photo.getUrl()).orElse(null));
+						.map(Photo::getUrl).orElse(null));
 	}
 
 	ProductDetailsDTO mapProductToProductDetailsDTO(Product product) {
@@ -48,17 +50,9 @@ public class ProductMapper {
 				product.isVegan(),
 				product.getPhotos().stream()
 						.sorted(Comparator.comparing(Photo::getAddedAt))
-						.map(this::mapPhotoToPhotoForProductDetailsDTO)
+						.map(photoMapper::mapPhotoToPhotoForItemDetailsDTO)
 						.toList(),
-				product.getTracesAllergens().stream().map(allergen -> allergen.getName()).toList());
-	}
-
-	PhotoForProductDetailsDTO mapPhotoToPhotoForProductDetailsDTO(Photo photo) {
-		return new PhotoForProductDetailsDTO(photo.getId(),
-				photo.getUrl(),
-				photo.getDescription(),
-				photo.getAddedAt(),
-				photo.isMain());
+				product.getTracesAllergens().stream().map(TracesAllergen::getName).toList());
 	}
 
 	public Product mapNewProductDTOToProductForSave(NewProductDTO newProductDto) {

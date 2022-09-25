@@ -1,0 +1,59 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="ddl015a" author="pawel">
+        <dropNotNullConstraint tableName="photos" columnName="product_id" columnDataType="bigserial"/>
+        <rollback>
+            <addNotNullConstraint tableName="photos" columnName="product_id" columnDataType="bigserial"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="ddl015b" author="pawel">
+        <addColumn tableName="photos">
+            <column name="recipe_id" type="bigserial">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <rollback>
+            <dropColumn tableName="photos" columnName="recipe_id" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="ddl015c" author="pawel">
+
+        <addForeignKeyConstraint baseColumnNames="recipe_id" baseTableName="photos"
+                                 constraintName="FK_photo_recipe" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="recipes" />
+
+        <rollback>
+            <dropForeignKeyConstraint baseTableName="photos" baseTableSchemaName="heartcooking" constraintName="FK_photo_recipe" />
+        </rollback>
+
+    </changeSet>
+
+    <changeSet id="ddl015d" author="pawel">
+        <addColumn tableName="photos">
+            <column name="recipe_step_id" type="bigserial">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <rollback>
+            <dropColumn tableName="photos" columnName="recipe_step_id" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="ddl015e" author="pawel">
+
+        <addForeignKeyConstraint baseColumnNames="recipe_id" baseTableName="photos"
+                                 constraintName="FK_photo_recipe_step" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="recipe_steps" />
+
+        <rollback>
+            <dropForeignKeyConstraint baseTableName="photos" baseTableSchemaName="heartcooking" constraintName="FK_photo_recipe_step" />
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

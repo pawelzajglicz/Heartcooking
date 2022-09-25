@@ -18,6 +18,7 @@
     <include file="ddl/012recipesTable.xml" relativeToChangelogFile="true"/>
     <include file="ddl/013recipesProductsTable.xml" relativeToChangelogFile="true"/>
     <include file="ddl/014recipeStepsTable.xml" relativeToChangelogFile="true"/>
+    <include file="ddl/015photosTableEnhanceByRecipe.xml" relativeToChangelogFile="true"/>
 
     <include file="dml/001usersRolesInsert.xml" relativeToChangelogFile="true"/>
     <include file="dml/002usersInsert.xml" relativeToChangelogFile="true"/>

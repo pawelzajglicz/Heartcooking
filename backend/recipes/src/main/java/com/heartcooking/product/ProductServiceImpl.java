@@ -27,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
 		Product newProduct = productMapper.mapNewProductDTOToProductForSave(newProductDto);
 		productRepository.saveAndFlush(newProduct);
 
-		log.info("Finish adding product {} by user {}", newProduct.getName(), user.toString());
+		log.info("Finish adding product {} by user {}", newProduct.getName(), user);
 	}
 
 	@Override
@@ -42,6 +42,6 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDetailsDTO getProductById(Long id) {
-		return productMapper.mapProductToProductDetailsDTO(productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException()));
+		return productMapper.mapProductToProductDetailsDTO(productRepository.findById(id).orElseThrow(ProductNotFoundException::new));
 	}
 }

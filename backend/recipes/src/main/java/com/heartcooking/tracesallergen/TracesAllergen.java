@@ -1,20 +1,19 @@
 package com.heartcooking.tracesallergen;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.heartcooking.Allergen;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Getter
+@Entity
+@NoArgsConstructor
+@Setter
 @Table(name = "traces_allergens", schema = "heartcooking")
-public class TracesAllergen implements Serializable {
+public class TracesAllergen implements Allergen, Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

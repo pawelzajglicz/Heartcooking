@@ -1,6 +1,6 @@
 package com.heartcooking.product.dtos;
 
-import com.heartcooking.photo.PhotoForProductDetailsDTO;
+import com.heartcooking.photo.PhotoForItemDetailsDTO;
 
 import java.util.List;
 
@@ -17,5 +17,5 @@ public record ProductDetailsDTO(Long id,
 								Double sugar,
 								Boolean isAllergen,
 								Boolean isVegan,
-								List<PhotoForProductDetailsDTO> photos,
+								List<PhotoForItemDetailsDTO> photos,
 								List<String> allergensNames) {}

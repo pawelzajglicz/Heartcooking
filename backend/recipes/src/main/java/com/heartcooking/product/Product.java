@@ -1,5 +1,6 @@
 package com.heartcooking.product;
 
+import com.heartcooking.Allergen;
 import com.heartcooking.photo.Photo;
 import com.heartcooking.tracesallergen.TracesAllergen;
 import lombok.*;
@@ -15,7 +16,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Setter
 @Table(name = "products", schema = "heartcooking")
-public class Product implements Serializable {
+public class Product implements Allergen, Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,11 +71,11 @@ public class Product implements Serializable {
 			inverseJoinColumns = @JoinColumn(name = "traces_allergen_id"))
 	private Set<TracesAllergen> tracesAllergens;
 
-	Boolean isAllergen() {
+	public Boolean isAllergen() {
 		return isAllergen;
 	}
 
-	Boolean isVegan() {
+	public Boolean isVegan() {
 		return isVegan;
 	}
 }

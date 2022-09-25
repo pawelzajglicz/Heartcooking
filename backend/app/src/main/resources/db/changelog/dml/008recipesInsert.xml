@@ -9,6 +9,7 @@
             <column name="name" value="Naleśniki"/>
             <column name="description" value="Proste naleśniki"/>
             <column name="author_id" value="4"/>
+            <column name="added_at" value="2020-10-07 15:01:10"/>
         </insert>
     </changeSet>
 
