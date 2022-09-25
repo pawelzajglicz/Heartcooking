@@ -30,7 +30,7 @@ public class RecipeController {
 		return ResponseEntity.ok(recipeService.getRecipes());
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/{recipeId}")
 	public ResponseEntity<RecipeDetailsDTO> getRecipeById(@PathVariable Long recipeId) {
 
 		UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
